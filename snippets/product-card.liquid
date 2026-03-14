@@ -1,0 +1,92 @@
+{% comment %}
+  LUXE Global — Product Card Snippet
+
+  Accepts:
+  - card_product: {Object} Product Liquid object
+  - show_secondary_image: {Boolean} Show second image on hover (default: false)
+  - lazy_load: {Boolean} Lazy load images (default: true)
+
+  Usage:
+  {% render 'product-card', card_product: product, show_secondary_image: true %}
+{% endcomment %}
+
+{%- if card_product and card_product != empty -%}
+  <article class="product-card">
+    <a href="{{ card_product.url }}" class="product-card__link" aria-label="{{ card_product.title }}">
+      <div class="product-card__media">
+        {%- if card_product.featured_media -%}
+          {{
+            card_product.featured_media
+            | image_url: width: 600
+            | image_tag:
+              class: 'product-card__image product-card__image--primary',
+              loading: lazy_load | default: true | ternary: 'lazy', 'eager',
+              sizes: '(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw',
+              widths: '200,300,400,600',
+              alt: card_product.featured_media.alt | default: card_product.title
+          }}
+
+          {%- if show_secondary_image and card_product.media.size > 1 -%}
+            {{
+              card_product.media[1]
+              | image_url: width: 600
+              | image_tag:
+                class: 'product-card__image product-card__image--secondary',
+                loading: 'lazy',
+                sizes: '(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw',
+                widths: '200,300,400,600',
+                alt: card_product.media[1].alt | default: card_product.title
+            }}
+          {%- endif -%}
+        {%- else -%}
+          <div class="product-card__placeholder">
+            {{ 'product-1' | placeholder_svg_tag }}
+          </div>
+        {%- endif -%}
+
+        {%- if card_product.available == false -%}
+          <span class="product-card__badge product-card__badge--sold-out">
+            {{ 'products.product.sold_out' | t }}
+          </span>
+        {%- elsif card_product.compare_at_price > card_product.price -%}
+          <span class="product-card__badge product-card__badge--sale">
+            {{ 'products.product.on_sale' | t }}
+          </span>
+        {%- endif -%}
+      </div>
+
+      <div class="product-card__info">
+        {%- if card_product.vendor -%}
+          <p class="product-card__vendor">{{ card_product.vendor }}</p>
+        {%- endif -%}
+
+        <h3 class="product-card__title">{{ card_product.title }}</h3>
+
+        <div class="product-card__price">
+          {%- if card_product.compare_at_price > card_product.price -%}
+            <span class="product-card__price--compare">
+              {{ card_product.compare_at_price | money }}
+            </span>
+          {%- endif -%}
+          <span class="product-card__price--current {% if card_product.compare_at_price > card_product.price %}product-card__price--sale{% endif %}">
+            {{ card_product.price | money }}
+          </span>
+        </div>
+      </div>
+    </a>
+  </article>
+{%- else -%}
+  <article class="product-card product-card--placeholder">
+    <div class="product-card__media">
+      <div class="product-card__placeholder">
+        {{ 'product-1' | placeholder_svg_tag }}
+      </div>
+    </div>
+    <div class="product-card__info">
+      <h3 class="product-card__title">{{ 'onboarding.product_title' | t }}</h3>
+      <div class="product-card__price">
+        <span class="product-card__price--current">{{ 9999 | money }}</span>
+      </div>
+    </div>
+  </article>
+{%- endif -%}

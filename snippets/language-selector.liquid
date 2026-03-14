@@ -1,0 +1,38 @@
+{% comment %}
+  LUXE Global — Language Selector Snippet
+
+  Uses Shopify Locales API to render a language dropdown.
+
+  Usage:
+  {% render 'language-selector' %}
+{% endcomment %}
+
+{%- if localization.available_languages.size > 1 -%}
+  <div class="language-selector">
+    {%- form 'localization', class: 'language-selector__form' -%}
+      <label class="visually-hidden" for="LanguageSelector">
+        {{ 'localization.language_label' | t }}
+      </label>
+      <select
+        id="LanguageSelector"
+        class="language-selector__select"
+        name="locale_code"
+        onchange="this.form.submit()"
+      >
+        {%- for language in localization.available_languages -%}
+          <option
+            value="{{ language.iso_code }}"
+            {% if language.iso_code == localization.language.iso_code %}selected{% endif %}
+          >
+            {{ language.endonym_name | capitalize }}
+          </option>
+        {%- endfor -%}
+      </select>
+      <noscript>
+        <button type="submit" class="btn btn--outline language-selector__btn">
+          {{ 'localization.update_language' | t }}
+        </button>
+      </noscript>
+    {%- endform -%}
+  </div>
+{%- endif -%}
