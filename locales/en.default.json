@@ -278,10 +278,19 @@
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
+      "navigation": "Main navigation",
+      "theme_toggle": "Toggle dark mode",
       "cart_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
       }
+    },
+    "newsletter": {
+      "email_placeholder": "Enter your email",
+      "subscribe": "Subscribe"
+    },
+    "footer": {
+      "rights": "All rights reserved."
     },
     "cart": {
       "title": "Your cart",

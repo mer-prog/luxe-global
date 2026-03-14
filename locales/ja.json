@@ -270,10 +270,19 @@
     "header": {
       "announcement": "告知",
       "menu": "メニュー",
+      "navigation": "メインナビゲーション",
+      "theme_toggle": "ダークモード切替",
       "cart_count": {
         "one": "{{ count }}個のアイテム",
         "other": "{{ count }}個のアイテム"
       }
+    },
+    "newsletter": {
+      "email_placeholder": "メールアドレスを入力",
+      "subscribe": "登録する"
+    },
+    "footer": {
+      "rights": "All rights reserved."
     },
     "cart": {
       "title": "あなたのカート",

@@ -393,6 +393,162 @@
         "name": "ヒーローバナー"
       }
     },
+    "featured_collection": {
+      "name": "注目のコレクション",
+      "settings": {
+        "title": {
+          "label": "見出し"
+        },
+        "subtitle": {
+          "label": "サブタイトル"
+        },
+        "collection": {
+          "label": "コレクション"
+        },
+        "products_to_show": {
+          "label": "表示する商品数"
+        },
+        "columns_desktop": {
+          "label": "デスクトップ列数"
+        },
+        "show_view_all": {
+          "label": "「すべて見る」リンクを表示"
+        }
+      },
+      "presets": {
+        "name": "注目のコレクション"
+      },
+      "view_all": "すべて見る"
+    },
+    "product_grid": {
+      "name": "商品グリッド",
+      "settings": {
+        "title": {
+          "label": "見出し"
+        },
+        "products_per_page": {
+          "label": "ページあたりの商品数"
+        },
+        "columns_desktop": {
+          "label": "デスクトップ列数"
+        },
+        "show_secondary_image": {
+          "label": "ホバー時に2枚目の画像を表示"
+        }
+      }
+    },
+    "brand_story": {
+      "name": "ブランドストーリー",
+      "settings": {
+        "image": {
+          "label": "画像"
+        },
+        "image_position": {
+          "label": "画像の位置",
+          "options": {
+            "left": "左",
+            "right": "右"
+          }
+        },
+        "heading": {
+          "label": "見出し"
+        },
+        "text": {
+          "label": "テキスト"
+        },
+        "button_text": {
+          "label": "ボタンテキスト"
+        },
+        "button_url": {
+          "label": "ボタンURL"
+        }
+      },
+      "presets": {
+        "name": "ブランドストーリー"
+      }
+    },
+    "faq": {
+      "name": "よくある質問",
+      "settings": {
+        "title": {
+          "label": "見出し"
+        }
+      },
+      "blocks": {
+        "faq_item": {
+          "name": "FAQ項目",
+          "settings": {
+            "question": {
+              "label": "質問"
+            },
+            "answer": {
+              "label": "回答"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "よくある質問"
+      }
+    },
+    "newsletter": {
+      "name": "ニュースレター",
+      "settings": {
+        "heading": {
+          "label": "見出し"
+        },
+        "subtext": {
+          "label": "サブテキスト"
+        }
+      },
+      "presets": {
+        "name": "ニュースレター"
+      },
+      "email_placeholder": "メールアドレスを入力",
+      "subscribe": "登録する"
+    },
+    "header": {
+      "name": "ヘッダー",
+      "settings": {
+        "logo": {
+          "label": "ロゴ"
+        },
+        "menu": {
+          "label": "メニュー"
+        }
+      },
+      "menu": "メニュー",
+      "navigation": "メインナビゲーション",
+      "theme_toggle": "ダークモード切替"
+    },
+    "footer": {
+      "name": "フッター",
+      "settings": {
+        "footer_description": {
+          "label": "説明文"
+        },
+        "show_payment_icons": {
+          "label": "決済アイコンを表示"
+        }
+      },
+      "blocks": {
+        "link_list": {
+          "name": "リンクリスト",
+          "settings": {
+            "heading": {
+              "label": "見出し"
+            },
+            "menu": {
+              "label": "メニュー"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "フッター"
+      },
+      "rights": "All rights reserved."
+    },
     "all": {
       "padding": {
         "section_padding_heading": "余白",

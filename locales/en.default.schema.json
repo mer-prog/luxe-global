@@ -393,6 +393,162 @@
         "name": "Hero Banner"
       }
     },
+    "featured_collection": {
+      "name": "Featured Collection",
+      "settings": {
+        "title": {
+          "label": "Heading"
+        },
+        "subtitle": {
+          "label": "Subtitle"
+        },
+        "collection": {
+          "label": "Collection"
+        },
+        "products_to_show": {
+          "label": "Products to show"
+        },
+        "columns_desktop": {
+          "label": "Desktop columns"
+        },
+        "show_view_all": {
+          "label": "Show \"View all\" link"
+        }
+      },
+      "presets": {
+        "name": "Featured Collection"
+      },
+      "view_all": "View All"
+    },
+    "product_grid": {
+      "name": "Product Grid",
+      "settings": {
+        "title": {
+          "label": "Heading"
+        },
+        "products_per_page": {
+          "label": "Products per page"
+        },
+        "columns_desktop": {
+          "label": "Desktop columns"
+        },
+        "show_secondary_image": {
+          "label": "Show second image on hover"
+        }
+      }
+    },
+    "brand_story": {
+      "name": "Brand Story",
+      "settings": {
+        "image": {
+          "label": "Image"
+        },
+        "image_position": {
+          "label": "Image position",
+          "options": {
+            "left": "Left",
+            "right": "Right"
+          }
+        },
+        "heading": {
+          "label": "Heading"
+        },
+        "text": {
+          "label": "Text"
+        },
+        "button_text": {
+          "label": "Button text"
+        },
+        "button_url": {
+          "label": "Button URL"
+        }
+      },
+      "presets": {
+        "name": "Brand Story"
+      }
+    },
+    "faq": {
+      "name": "FAQ",
+      "settings": {
+        "title": {
+          "label": "Heading"
+        }
+      },
+      "blocks": {
+        "faq_item": {
+          "name": "FAQ Item",
+          "settings": {
+            "question": {
+              "label": "Question"
+            },
+            "answer": {
+              "label": "Answer"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "FAQ"
+      }
+    },
+    "newsletter": {
+      "name": "Newsletter",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "subtext": {
+          "label": "Subtext"
+        }
+      },
+      "presets": {
+        "name": "Newsletter"
+      },
+      "email_placeholder": "Enter your email",
+      "subscribe": "Subscribe"
+    },
+    "header": {
+      "name": "Header",
+      "settings": {
+        "logo": {
+          "label": "Logo"
+        },
+        "menu": {
+          "label": "Menu"
+        }
+      },
+      "menu": "Menu",
+      "navigation": "Main navigation",
+      "theme_toggle": "Toggle dark mode"
+    },
+    "footer": {
+      "name": "Footer",
+      "settings": {
+        "footer_description": {
+          "label": "Description"
+        },
+        "show_payment_icons": {
+          "label": "Show payment icons"
+        }
+      },
+      "blocks": {
+        "link_list": {
+          "name": "Link list",
+          "settings": {
+            "heading": {
+              "label": "Heading"
+            },
+            "menu": {
+              "label": "Menu"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Footer"
+      },
+      "rights": "All rights reserved."
+    },
     "all": {
       "animation": {
         "content": "Animations",
