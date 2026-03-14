@@ -1,0 +1,100 @@
+{{ 'section-brand-story.css' | asset_url | stylesheet_tag }}
+
+<section class="section-spacing">
+  <div class="page-width">
+    <div class="section-brand-story__grid {% if section.settings.image_position == 'right' %}section-brand-story__grid--reversed{% endif %}">
+      {%- comment -%} Image {%- endcomment -%}
+      <div class="section-brand-story__media">
+        {%- if section.settings.image != blank -%}
+          {{
+            section.settings.image
+            | image_url: width: 1200
+            | image_tag:
+              class: 'section-brand-story__image',
+              loading: 'lazy',
+              sizes: '(min-width: 768px) 50vw, 100vw',
+              widths: '375,550,750,1000,1200',
+              alt: section.settings.image.alt | default: section.settings.heading
+          }}
+        {%- else -%}
+          <div class="section-brand-story__placeholder">
+            {{ 'lifestyle-2' | placeholder_svg_tag }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Content {%- endcomment -%}
+      <div class="section-brand-story__content">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="section-brand-story__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="section-brand-story__text">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.button_text != blank -%}
+          <a
+            href="{{ section.settings.button_url }}"
+            class="btn btn--primary section-brand-story__cta"
+          >
+            {{ section.settings.button_text }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.brand_story.name",
+  "tag": "section",
+  "class": "section-brand-story-wrapper",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.brand_story.settings.image.label"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "options": [
+        { "value": "left", "label": "t:sections.brand_story.settings.image_position.options.left" },
+        { "value": "right", "label": "t:sections.brand_story.settings.image_position.options.right" }
+      ],
+      "default": "left",
+      "label": "t:sections.brand_story.settings.image_position.label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Our Story",
+      "label": "t:sections.brand_story.settings.heading.label"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "default": "<p>Every piece in our collection tells a story of craftsmanship and dedication. We source the finest materials from around the world to create products that stand the test of time.</p>",
+      "label": "t:sections.brand_story.settings.text.label"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "default": "Learn More",
+      "label": "t:sections.brand_story.settings.button_text.label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "t:sections.brand_story.settings.button_url.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.brand_story.presets.name"
+    }
+  ]
+}
+{% endschema %}
