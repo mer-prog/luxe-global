@@ -364,6 +364,35 @@
     }
   },
   "sections": {
+    "hero_banner": {
+      "name": "Hero Banner",
+      "settings": {
+        "hero_image": {
+          "label": "Background image"
+        },
+        "hero_video": {
+          "label": "Background video"
+        },
+        "hero_heading": {
+          "label": "Heading"
+        },
+        "hero_subtext": {
+          "label": "Subtext"
+        },
+        "button_text": {
+          "label": "Button text"
+        },
+        "button_url": {
+          "label": "Button URL"
+        },
+        "overlay_opacity": {
+          "label": "Overlay opacity"
+        }
+      },
+      "presets": {
+        "name": "Hero Banner"
+      }
+    },
     "all": {
       "animation": {
         "content": "Animations",

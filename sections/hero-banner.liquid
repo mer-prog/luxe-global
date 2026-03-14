@@ -1,0 +1,114 @@
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="section-hero"
+  style="--hero-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"
+>
+  {%- comment -%} Background Image / Video {%- endcomment -%}
+  <div class="section-hero__media">
+    {%- if section.settings.hero_video != blank -%}
+      {{
+        section.settings.hero_video
+        | video_tag: autoplay: true, loop: true, muted: true, playsinline: true
+      }}
+    {%- elsif section.settings.hero_image != blank -%}
+      {{
+        section.settings.hero_image
+        | image_url: width: 2000
+        | image_tag:
+          loading: 'eager',
+          sizes: '100vw',
+          widths: '375,750,1100,1500,2000',
+          alt: section.settings.hero_image.alt | default: section.settings.hero_heading
+      }}
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'section-hero__placeholder' }}
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} Overlay {%- endcomment -%}
+  <div class="section-hero__overlay" aria-hidden="true"></div>
+
+  {%- comment -%} Content {%- endcomment -%}
+  <div class="section-hero__content">
+    {%- if section.settings.hero_heading != blank -%}
+      <h1 class="section-hero__heading">
+        {{ section.settings.hero_heading }}
+      </h1>
+    {%- endif -%}
+
+    {%- if section.settings.hero_subtext != blank -%}
+      <p class="section-hero__subtext">
+        {{ section.settings.hero_subtext }}
+      </p>
+    {%- endif -%}
+
+    {%- if section.settings.button_text != blank -%}
+      <a
+        href="{{ section.settings.button_url }}"
+        class="section-hero__cta"
+        {%- if section.settings.button_url == blank %} aria-disabled="true"{% endif -%}
+      >
+        {{ section.settings.button_text }}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.hero_banner.name",
+  "tag": "section",
+  "class": "section-hero-wrapper",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "t:sections.hero_banner.settings.hero_image.label"
+    },
+    {
+      "type": "video",
+      "id": "hero_video",
+      "label": "t:sections.hero_banner.settings.hero_video.label"
+    },
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "default": "Timeless Elegance",
+      "label": "t:sections.hero_banner.settings.hero_heading.label"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtext",
+      "default": "Discover our curated collection of luxury goods, crafted for the modern connoisseur.",
+      "label": "t:sections.hero_banner.settings.hero_subtext.label"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "default": "Shop Now",
+      "label": "t:sections.hero_banner.settings.button_text.label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "t:sections.hero_banner.settings.button_url.label"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 45,
+      "unit": "%",
+      "label": "t:sections.hero_banner.settings.overlay_opacity.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.hero_banner.presets.name"
+    }
+  ]
+}
+{% endschema %}

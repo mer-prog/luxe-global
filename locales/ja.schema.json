@@ -364,6 +364,35 @@
     }
   },
   "sections": {
+    "hero_banner": {
+      "name": "ヒーローバナー",
+      "settings": {
+        "hero_image": {
+          "label": "背景画像"
+        },
+        "hero_video": {
+          "label": "背景動画"
+        },
+        "hero_heading": {
+          "label": "見出し"
+        },
+        "hero_subtext": {
+          "label": "サブテキスト"
+        },
+        "button_text": {
+          "label": "ボタンテキスト"
+        },
+        "button_url": {
+          "label": "ボタンURL"
+        },
+        "overlay_opacity": {
+          "label": "オーバーレイ透過度"
+        }
+      },
+      "presets": {
+        "name": "ヒーローバナー"
+      }
+    },
     "all": {
       "padding": {
         "section_padding_heading": "余白",

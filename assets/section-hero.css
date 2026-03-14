@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Section: Hero Banner
+   ========================================================================== */
+
+.section-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+/* ---------- Background Media ---------- */
+.section-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.section-hero__media img,
+.section-hero__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Overlay ---------- */
+.section-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, var(--hero-overlay-opacity, 0.45));
+}
+
+/* ---------- Content ---------- */
+.section-hero__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  padding: var(--space-xl) var(--space-lg);
+  color: #FFFFFF;
+}
+
+.section-hero__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-md);
+}
+
+.section-hero__subtext {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: var(--space-lg);
+  max-width: 600px;
+}
+
+/* ---------- CTA Button ---------- */
+.section-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-target);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.section-hero__cta:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 639px) {
+  .section-hero {
+    min-height: 80vh;
+    min-height: 80svh;
+  }
+
+  .section-hero__content {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
