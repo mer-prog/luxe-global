@@ -1,0 +1,80 @@
+{{ 'section-product-grid.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}
+  Product Grid section — used on collection pages.
+  Displays products from the current collection context.
+{%- endcomment -%}
+
+<section class="section-spacing">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <div class="product-grid-section__header">
+        <h2 class="product-grid-section__title">{{ section.settings.title }}</h2>
+      </div>
+    {%- endif -%}
+
+    {%- liquid
+      assign columns = section.settings.columns_desktop
+    -%}
+
+    {%- paginate collection.products by section.settings.products_per_page -%}
+      <div class="product-grid {% if columns == 4 %}product-grid--4col{% endif %}">
+        {%- for product in collection.products -%}
+          {% render 'product-card',
+            card_product: product,
+            show_secondary_image: section.settings.show_secondary_image,
+            lazy_load: true
+          %}
+        {%- else -%}
+          <p>{{ 'sections.collection_template.empty' | t }}</p>
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        <nav class="product-grid-section__pagination" aria-label="{{ 'general.pagination.label' | t }}">
+          {{ paginate | default_pagination: next: '&rarr;', previous: '&larr;' }}
+        </nav>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.product_grid.name",
+  "tag": "section",
+  "class": "section-product-grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.product_grid.settings.title.label"
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 4,
+      "max": 24,
+      "step": 4,
+      "default": 16,
+      "label": "t:sections.product_grid.settings.products_per_page.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "options": [
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "4",
+      "label": "t:sections.product_grid.settings.columns_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": true,
+      "label": "t:sections.product_grid.settings.show_secondary_image.label"
+    }
+  ]
+}
+{% endschema %}
