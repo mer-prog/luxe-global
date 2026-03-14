@@ -1,0 +1,92 @@
+{{ 'section-faq.css' | asset_url | stylesheet_tag }}
+
+<section class="section-spacing">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <div class="section-faq__header">
+        <h2 class="section-faq__title">{{ section.settings.title }}</h2>
+      </div>
+    {%- endif -%}
+
+    <div class="section-faq__list">
+      {%- for block in section.blocks -%}
+        <details class="faq-item" {{ block.shopify_attributes }}>
+          <summary>
+            <span>{{ block.settings.question }}</span>
+            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+            </svg>
+          </summary>
+          <div class="faq-item__answer">
+            {{ block.settings.answer }}
+          </div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.faq.name",
+  "tag": "section",
+  "class": "section-faq-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Frequently Asked Questions",
+      "label": "t:sections.faq.settings.title.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "t:sections.faq.blocks.faq_item.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "default": "What is your shipping policy?",
+          "label": "t:sections.faq.blocks.faq_item.settings.question.label"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "default": "<p>We offer worldwide shipping. Orders are typically processed within 1-2 business days.</p>",
+          "label": "t:sections.faq.blocks.faq_item.settings.answer.label"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "t:sections.faq.presets.name",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your shipping policy?",
+            "answer": "<p>We offer worldwide shipping. Orders are typically processed within 1-2 business days.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We accept returns within 30 days of purchase. Items must be in original condition.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>Yes, we ship to over 50 countries worldwide. Shipping rates and delivery times vary by destination.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
