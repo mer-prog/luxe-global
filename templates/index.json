@@ -3,9 +3,9 @@
     "hero": {
       "type": "hero-banner",
       "settings": {
-        "hero_heading": "Timeless Elegance",
-        "hero_subtext": "Discover our curated collection of luxury goods, crafted for the modern connoisseur.",
-        "button_text": "Shop Now",
+        "hero_heading": "t:sections.hero_banner.defaults.heading",
+        "hero_subtext": "t:sections.hero_banner.defaults.subtext",
+        "button_text": "t:sections.hero_banner.defaults.button_text",
         "button_url": "shopify://collections/all",
         "overlay_opacity": 45
       }
@@ -13,8 +13,8 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured Collection",
-        "subtitle": "Handpicked pieces for the discerning eye",
+        "title": "t:sections.featured_collection.defaults.title",
+        "subtitle": "t:sections.featured_collection.defaults.subtitle",
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": "4",
@@ -24,9 +24,9 @@
     "brand_story": {
       "type": "brand-story",
       "settings": {
-        "heading": "Our Story",
-        "text": "<p>Every piece in our collection tells a story of craftsmanship and dedication. We source the finest materials from around the world to create products that stand the test of time.</p>",
-        "button_text": "Learn More",
+        "heading": "t:sections.brand_story.defaults.heading",
+        "text": "t:sections.brand_story.defaults.text",
+        "button_text": "t:sections.brand_story.defaults.button_text",
         "image_position": "left"
       }
     },
@@ -36,35 +36,35 @@
         "faq-1": {
           "type": "faq_item",
           "settings": {
-            "question": "What is your shipping policy?",
-            "answer": "<p>We offer worldwide shipping. Orders are typically processed within 1-2 business days.</p>"
+            "question": "t:sections.faq.defaults.faq_1.question",
+            "answer": "t:sections.faq.defaults.faq_1.answer"
           }
         },
         "faq-2": {
           "type": "faq_item",
           "settings": {
-            "question": "What is your return policy?",
-            "answer": "<p>We accept returns within 30 days of purchase. Items must be in original condition.</p>"
+            "question": "t:sections.faq.defaults.faq_2.question",
+            "answer": "t:sections.faq.defaults.faq_2.answer"
           }
         },
         "faq-3": {
           "type": "faq_item",
           "settings": {
-            "question": "Do you ship internationally?",
-            "answer": "<p>Yes, we ship to over 50 countries worldwide. Shipping rates and delivery times vary by destination.</p>"
+            "question": "t:sections.faq.defaults.faq_3.question",
+            "answer": "t:sections.faq.defaults.faq_3.answer"
           }
         }
       },
       "block_order": ["faq-1", "faq-2", "faq-3"],
       "settings": {
-        "title": "Frequently Asked Questions"
+        "title": "t:sections.faq.defaults.title"
       }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Stay in Touch",
-        "subtext": "Subscribe to receive updates, access to exclusive deals, and more."
+        "heading": "t:sections.newsletter.defaults.heading",
+        "subtext": "t:sections.newsletter.defaults.subtext"
       }
     }
   },
