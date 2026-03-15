@@ -1,13 +1,82 @@
 {% comment %}
   LUXE Global — Language Selector Snippet
 
-  Uses Shopify Locales API to render a language dropdown.
+  Uses Shopify Localization API to render a styled language dropdown.
+  Displays ISO codes (EN, JA) for a clean, luxury aesthetic.
 
   Usage:
   {% render 'language-selector' %}
 {% endcomment %}
 
 {%- if localization.available_languages.size > 1 -%}
+  <style>
+    .language-selector {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .language-selector__form {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .language-selector__select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: transparent;
+      border: 1px solid #C5A467;
+      border-radius: 0;
+      padding: 0.375rem 1.75rem 0.375rem 0.625rem;
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text);
+      cursor: pointer;
+      transition: border-color var(--transition-fast), color var(--transition-fast);
+      min-width: 3.25rem;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .language-selector__select:hover,
+    .language-selector__select:focus-visible {
+      border-color: #C5A467;
+      color: #C5A467;
+      outline: none;
+    }
+
+    .language-selector__arrow {
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #C5A467;
+      display: flex;
+      align-items: center;
+    }
+
+    .language-selector__arrow svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    .language-selector__btn {
+      margin-left: 0.25rem;
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid #C5A467;
+      color: #C5A467;
+      background: transparent;
+      padding: 0.375rem 0.625rem;
+      cursor: pointer;
+    }
+  </style>
+
   <div class="language-selector">
     {%- form 'localization', class: 'language-selector__form' -%}
       <label class="visually-hidden" for="LanguageSelector">
@@ -24,12 +93,17 @@
             value="{{ language.iso_code }}"
             {% if language.iso_code == localization.language.iso_code %}selected{% endif %}
           >
-            {{ language.endonym_name | capitalize }}
+            {{- language.iso_code | upcase -}}
           </option>
         {%- endfor -%}
       </select>
+      <span class="language-selector__arrow" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
+        </svg>
+      </span>
       <noscript>
-        <button type="submit" class="btn btn--outline language-selector__btn">
+        <button type="submit" class="language-selector__btn">
           {{ 'localization.update_language' | t }}
         </button>
       </noscript>
