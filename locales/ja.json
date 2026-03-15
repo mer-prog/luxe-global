@@ -281,9 +281,6 @@
       "email_placeholder": "メールアドレスを入力",
       "subscribe": "登録する"
     },
-    "footer": {
-      "rights": "All rights reserved."
-    },
     "cart": {
       "title": "あなたのカート",
       "caption": "カートアイテム",
@@ -317,6 +314,7 @@
       "taxes_at_checkout_shipping_at_checkout_without_policy": "税、ディスカウント、および配送料はチェックアウト時に計算されます。"
     },
     "footer": {
+      "rights": "全著作権所有。",
       "payment": "決済方法"
     },
     "featured_blog": {

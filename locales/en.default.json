@@ -289,9 +289,6 @@
       "email_placeholder": "Enter your email",
       "subscribe": "Subscribe"
     },
-    "footer": {
-      "rights": "All rights reserved."
-    },
     "cart": {
       "title": "Your cart",
       "caption": "Cart items",
@@ -325,6 +322,7 @@
       }
     },
     "footer": {
+      "rights": "All rights reserved.",
       "payment": "Payment methods"
     },
     "featured_blog": {
