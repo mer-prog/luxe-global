@@ -107,7 +107,7 @@
       <div class="section-footer__col">
         <p class="section-footer__brand-name">{{ shop.name }}</p>
         {%- if section.settings.footer_description != blank -%}
-          <p class="section-footer__brand-text">{{ section.settings.footer_description }}</p>
+          <p class="section-footer__brand-text">{{ 'sections.footer.defaults.description' | t | default: section.settings.footer_description }}</p>
         {%- endif -%}
       </div>
 
@@ -164,7 +164,7 @@
     {
       "type": "textarea",
       "id": "footer_description",
-      "default": "Luxury goods curated for the modern connoisseur. Worldwide shipping available.",
+      "default": "t:sections.footer.defaults.description",
       "label": "t:sections.footer.settings.footer_description.label"
     },
     {
@@ -182,7 +182,7 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Quick links",
+          "default": "t:sections.footer.defaults.quick_links",
           "label": "t:sections.footer.blocks.link_list.settings.heading.label"
         },
         {

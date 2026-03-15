@@ -33,13 +33,13 @@
   <div class="section-hero__content">
     {%- if section.settings.hero_heading != blank -%}
       <h1 class="section-hero__heading">
-        {{ section.settings.hero_heading }}
+        {{ 'sections.hero_banner.defaults.heading' | t | default: section.settings.hero_heading }}
       </h1>
     {%- endif -%}
 
     {%- if section.settings.hero_subtext != blank -%}
       <p class="section-hero__subtext">
-        {{ section.settings.hero_subtext }}
+        {{ 'sections.hero_banner.defaults.subtext' | t | default: section.settings.hero_subtext }}
       </p>
     {%- endif -%}
 
@@ -49,7 +49,7 @@
         class="section-hero__cta"
         {%- if section.settings.button_url == blank %} aria-disabled="true"{% endif -%}
       >
-        {{ section.settings.button_text }}
+        {{ 'sections.hero_banner.defaults.button_text' | t | default: section.settings.button_text }}
       </a>
     {%- endif -%}
   </div>
@@ -74,19 +74,19 @@
     {
       "type": "text",
       "id": "hero_heading",
-      "default": "Timeless Elegance",
+      "default": "t:sections.hero_banner.defaults.heading",
       "label": "t:sections.hero_banner.settings.hero_heading.label"
     },
     {
       "type": "textarea",
       "id": "hero_subtext",
-      "default": "Discover our curated collection of luxury goods, crafted for the modern connoisseur.",
+      "default": "t:sections.hero_banner.defaults.subtext",
       "label": "t:sections.hero_banner.settings.hero_subtext.label"
     },
     {
       "type": "text",
       "id": "button_text",
-      "default": "Shop Now",
+      "default": "t:sections.hero_banner.defaults.button_text",
       "label": "t:sections.hero_banner.settings.button_text.label"
     },
     {

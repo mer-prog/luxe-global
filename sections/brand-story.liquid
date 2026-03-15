@@ -26,11 +26,11 @@
       {%- comment -%} Content {%- endcomment -%}
       <div class="section-brand-story__content">
         {%- if section.settings.heading != blank -%}
-          <h2 class="section-brand-story__heading">{{ section.settings.heading }}</h2>
+          <h2 class="section-brand-story__heading">{{ 'sections.brand_story.defaults.heading' | t | default: section.settings.heading }}</h2>
         {%- endif -%}
 
         {%- if section.settings.text != blank -%}
-          <div class="section-brand-story__text">{{ section.settings.text }}</div>
+          <div class="section-brand-story__text">{{ 'sections.brand_story.defaults.text' | t | default: section.settings.text }}</div>
         {%- endif -%}
 
         {%- if section.settings.button_text != blank -%}
@@ -38,7 +38,7 @@
             href="{{ section.settings.button_url }}"
             class="btn btn--primary section-brand-story__cta"
           >
-            {{ section.settings.button_text }}
+            {{ 'sections.brand_story.defaults.button_text' | t | default: section.settings.button_text }}
           </a>
         {%- endif -%}
       </div>
@@ -70,19 +70,19 @@
     {
       "type": "text",
       "id": "heading",
-      "default": "Our Story",
+      "default": "t:sections.brand_story.defaults.heading",
       "label": "t:sections.brand_story.settings.heading.label"
     },
     {
       "type": "richtext",
       "id": "text",
-      "default": "<p>Every piece in our collection tells a story of craftsmanship and dedication. We source the finest materials from around the world to create products that stand the test of time.</p>",
+      "default": "t:sections.brand_story.defaults.text",
       "label": "t:sections.brand_story.settings.text.label"
     },
     {
       "type": "text",
       "id": "button_text",
-      "default": "Learn More",
+      "default": "t:sections.brand_story.defaults.button_text",
       "label": "t:sections.brand_story.settings.button_text.label"
     },
     {

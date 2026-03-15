@@ -276,6 +276,7 @@
     },
 
     "header": {
+      "name": "Header",
       "announcement": "Announcement",
       "menu": "Menu",
       "navigation": "Main navigation",
@@ -283,11 +284,25 @@
       "cart_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
+      },
+      "settings": {
+        "logo": { "label": "Logo" },
+        "menu": { "label": "Navigation menu" }
       }
     },
     "newsletter": {
+      "name": "Newsletter",
       "email_placeholder": "Enter your email",
-      "subscribe": "Subscribe"
+      "subscribe": "Subscribe",
+      "settings": {
+        "heading": { "label": "Heading" },
+        "subtext": { "label": "Subtext" }
+      },
+      "presets": { "name": "Newsletter" },
+      "defaults": {
+        "heading": "Stay in Touch",
+        "subtext": "Subscribe to receive updates, access to exclusive deals, and more."
+      }
     },
     "cart": {
       "title": "Your cart",
@@ -322,8 +337,27 @@
       }
     },
     "footer": {
+      "name": "Footer",
       "rights": "All rights reserved.",
-      "payment": "Payment methods"
+      "payment": "Payment methods",
+      "settings": {
+        "footer_description": { "label": "Brand description" },
+        "show_payment_icons": { "label": "Show payment icons" }
+      },
+      "blocks": {
+        "link_list": {
+          "name": "Link list",
+          "settings": {
+            "heading": { "label": "Heading" },
+            "menu": { "label": "Menu" }
+          }
+        }
+      },
+      "presets": { "name": "Footer" },
+      "defaults": {
+        "description": "Luxury goods curated for the modern connoisseur. Worldwide shipping available.",
+        "quick_links": "Quick links"
+      }
     },
     "featured_blog": {
       "view_all": "View all",
@@ -331,8 +365,22 @@
       "onboarding_content": "Give your customers a summary of your blog post"
     },
     "featured_collection": {
+      "name": "Featured Collection",
       "view_all": "View all",
-      "view_all_label": "View all products in the {{ collection_name }} collection"
+      "view_all_label": "View all products in the {{ collection_name }} collection",
+      "settings": {
+        "title": { "label": "Title" },
+        "subtitle": { "label": "Subtitle" },
+        "collection": { "label": "Collection" },
+        "products_to_show": { "label": "Products to show" },
+        "columns_desktop": { "label": "Desktop columns" },
+        "show_view_all": { "label": "Show 'View all' button" }
+      },
+      "presets": { "name": "Featured Collection" },
+      "defaults": {
+        "title": "Featured Collection",
+        "subtitle": "Handpicked pieces for the discerning eye"
+      }
     },
     "collection_list": {
       "view_all": "View all"
@@ -381,6 +429,92 @@
       "min_error": "This item has a minimum of {{ min }}",
       "max_error": "This item has a maximum of {{ max }}",
       "step_error": "You can only add this item in increments of {{ step }}"
+    },
+    "hero_banner": {
+      "name": "Hero Banner",
+      "settings": {
+        "hero_image": { "label": "Background image" },
+        "hero_video": { "label": "Background video" },
+        "hero_heading": { "label": "Heading" },
+        "hero_subtext": { "label": "Subtext" },
+        "button_text": { "label": "Button text" },
+        "button_url": { "label": "Button URL" },
+        "overlay_opacity": { "label": "Overlay opacity" }
+      },
+      "presets": { "name": "Hero Banner" },
+      "defaults": {
+        "heading": "Timeless Elegance",
+        "subtext": "Discover our curated collection of luxury goods, crafted for the modern connoisseur.",
+        "button_text": "Shop Now"
+      }
+    },
+    "brand_story": {
+      "name": "Brand Story",
+      "settings": {
+        "image": { "label": "Image" },
+        "image_position": {
+          "label": "Image position",
+          "options": {
+            "left": "Left",
+            "right": "Right"
+          }
+        },
+        "heading": { "label": "Heading" },
+        "text": { "label": "Body text" },
+        "button_text": { "label": "Button text" },
+        "button_url": { "label": "Button URL" }
+      },
+      "presets": { "name": "Brand Story" },
+      "defaults": {
+        "heading": "Our Story",
+        "text": "<p>Every piece in our collection tells a story of craftsmanship and dedication. We source the finest materials from around the world to create products that stand the test of time.</p>",
+        "button_text": "Learn More"
+      }
+    },
+    "faq": {
+      "name": "FAQ",
+      "settings": {
+        "title": { "label": "Title" }
+      },
+      "blocks": {
+        "faq_item": {
+          "name": "FAQ Item",
+          "settings": {
+            "question": { "label": "Question" },
+            "answer": { "label": "Answer" }
+          }
+        }
+      },
+      "presets": { "name": "FAQ" },
+      "defaults": {
+        "title": "Frequently Asked Questions",
+        "faq_1": {
+          "question": "What is your shipping policy?",
+          "answer": "<p>We offer worldwide shipping. Orders are typically processed within 1-2 business days.</p>"
+        },
+        "faq_2": {
+          "question": "What is your return policy?",
+          "answer": "<p>We accept returns within 30 days of purchase. Items must be in original condition.</p>"
+        },
+        "faq_3": {
+          "question": "Do you ship internationally?",
+          "answer": "<p>Yes, we ship to over 50 countries worldwide. Shipping rates and delivery times vary by destination.</p>"
+        }
+      }
+    },
+    "product_grid": {
+      "name": "Product Grid",
+      "settings": {
+        "title": { "label": "Title" },
+        "products_per_page": { "label": "Products per page" },
+        "columns_desktop": { "label": "Desktop columns" },
+        "show_secondary_image": { "label": "Show secondary image" }
+      }
+    },
+    "related_products": {
+      "defaults": {
+        "heading": "You may also like"
+      }
     }
   },
   "localization": {

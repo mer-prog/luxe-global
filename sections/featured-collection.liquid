@@ -4,9 +4,9 @@
   <div class="page-width">
     {%- if section.settings.title != blank -%}
       <div class="product-grid-section__header">
-        <h2 class="product-grid-section__title">{{ section.settings.title }}</h2>
+        <h2 class="product-grid-section__title">{{ 'sections.featured_collection.defaults.title' | t | default: section.settings.title }}</h2>
         {%- if section.settings.subtitle != blank -%}
-          <p class="product-grid-section__subtitle">{{ section.settings.subtitle }}</p>
+          <p class="product-grid-section__subtitle">{{ 'sections.featured_collection.defaults.subtitle' | t | default: section.settings.subtitle }}</p>
         {%- endif -%}
       </div>
     {%- endif -%}
@@ -55,7 +55,7 @@
     {
       "type": "text",
       "id": "title",
-      "default": "Featured Collection",
+      "default": "t:sections.featured_collection.defaults.title",
       "label": "t:sections.featured_collection.settings.title.label"
     },
     {

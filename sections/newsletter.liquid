@@ -89,11 +89,11 @@
   <div class="page-width">
     <div class="section-newsletter__inner">
       {%- if section.settings.heading != blank -%}
-        <h2 class="section-newsletter__heading">{{ section.settings.heading }}</h2>
+        <h2 class="section-newsletter__heading">{{ 'sections.newsletter.defaults.heading' | t | default: section.settings.heading }}</h2>
       {%- endif -%}
 
       {%- if section.settings.subtext != blank -%}
-        <p class="section-newsletter__text">{{ section.settings.subtext }}</p>
+        <p class="section-newsletter__text">{{ 'sections.newsletter.defaults.subtext' | t | default: section.settings.subtext }}</p>
       {%- endif -%}
 
       {%- form 'customer', class: 'section-newsletter__form' -%}
@@ -124,13 +124,13 @@
     {
       "type": "text",
       "id": "heading",
-      "default": "Stay in Touch",
+      "default": "t:sections.newsletter.defaults.heading",
       "label": "t:sections.newsletter.settings.heading.label"
     },
     {
       "type": "textarea",
       "id": "subtext",
-      "default": "Subscribe to receive updates, access to exclusive deals, and more.",
+      "default": "t:sections.newsletter.defaults.subtext",
       "label": "t:sections.newsletter.settings.subtext.label"
     }
   ],

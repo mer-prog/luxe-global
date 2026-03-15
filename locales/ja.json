@@ -268,6 +268,7 @@
   },
   "sections": {
     "header": {
+      "name": "ヘッダー",
       "announcement": "告知",
       "menu": "メニュー",
       "navigation": "メインナビゲーション",
@@ -275,11 +276,25 @@
       "cart_count": {
         "one": "{{ count }}個のアイテム",
         "other": "{{ count }}個のアイテム"
+      },
+      "settings": {
+        "logo": { "label": "ロゴ" },
+        "menu": { "label": "ナビゲーションメニュー" }
       }
     },
     "newsletter": {
+      "name": "ニュースレター",
       "email_placeholder": "メールアドレスを入力",
-      "subscribe": "登録する"
+      "subscribe": "登録する",
+      "settings": {
+        "heading": { "label": "見出し" },
+        "subtext": { "label": "サブテキスト" }
+      },
+      "presets": { "name": "ニュースレター" },
+      "defaults": {
+        "heading": "最新情報をお届け",
+        "subtext": "新着情報や限定セールなど、お得な情報をお届けします。ぜひご登録ください。"
+      }
     },
     "cart": {
       "title": "あなたのカート",
@@ -314,8 +329,27 @@
       "taxes_at_checkout_shipping_at_checkout_without_policy": "税、ディスカウント、および配送料はチェックアウト時に計算されます。"
     },
     "footer": {
+      "name": "フッター",
       "rights": "全著作権所有。",
-      "payment": "決済方法"
+      "payment": "決済方法",
+      "settings": {
+        "footer_description": { "label": "ブランド説明" },
+        "show_payment_icons": { "label": "決済アイコンを表示" }
+      },
+      "blocks": {
+        "link_list": {
+          "name": "リンクリスト",
+          "settings": {
+            "heading": { "label": "見出し" },
+            "menu": { "label": "メニュー" }
+          }
+        }
+      },
+      "presets": { "name": "フッター" },
+      "defaults": {
+        "description": "世界中のお客様へ、厳選されたラグジュアリーアイテムをお届けします。全国・海外配送対応。",
+        "quick_links": "クイックリンク"
+      }
     },
     "featured_blog": {
       "view_all": "すべてを表示する",
@@ -323,8 +357,22 @@
       "onboarding_content": "お客様にブログ記事のサマリーを提供する"
     },
     "featured_collection": {
+      "name": "注目のコレクション",
       "view_all": "すべてを表示する",
-      "view_all_label": "{{ collection_name }}コレクションの商品をすべて表示する"
+      "view_all_label": "{{ collection_name }}コレクションの商品をすべて表示する",
+      "settings": {
+        "title": { "label": "タイトル" },
+        "subtitle": { "label": "サブタイトル" },
+        "collection": { "label": "コレクション" },
+        "products_to_show": { "label": "表示する商品数" },
+        "columns_desktop": { "label": "デスクトップ列数" },
+        "show_view_all": { "label": "「すべて表示」ボタンを表示" }
+      },
+      "presets": { "name": "注目のコレクション" },
+      "defaults": {
+        "title": "注目のコレクション",
+        "subtitle": "目の肥えた方のために厳選したアイテム"
+      }
     },
     "collection_list": {
       "view_all": "すべてを表示する"
@@ -380,6 +428,92 @@
       "min_error": "このアイテムの最小値は{{ min }}です",
       "max_error": "このアイテムの最大値は{{ max }}です",
       "step_error": "このアイテムは、{{ step }}の増分でのみ追加できます"
+    },
+    "hero_banner": {
+      "name": "ヒーローバナー",
+      "settings": {
+        "hero_image": { "label": "背景画像" },
+        "hero_video": { "label": "背景動画" },
+        "hero_heading": { "label": "見出し" },
+        "hero_subtext": { "label": "サブテキスト" },
+        "button_text": { "label": "ボタンテキスト" },
+        "button_url": { "label": "ボタンURL" },
+        "overlay_opacity": { "label": "オーバーレイ透過度" }
+      },
+      "presets": { "name": "ヒーローバナー" },
+      "defaults": {
+        "heading": "時を超えるエレガンス",
+        "subtext": "現代の目利きのために厳選された、ラグジュアリーコレクションをご覧ください。",
+        "button_text": "今すぐ購入"
+      }
+    },
+    "brand_story": {
+      "name": "ブランドストーリー",
+      "settings": {
+        "image": { "label": "画像" },
+        "image_position": {
+          "label": "画像位置",
+          "options": {
+            "left": "左",
+            "right": "右"
+          }
+        },
+        "heading": { "label": "見出し" },
+        "text": { "label": "本文" },
+        "button_text": { "label": "ボタンテキスト" },
+        "button_url": { "label": "ボタンURL" }
+      },
+      "presets": { "name": "ブランドストーリー" },
+      "defaults": {
+        "heading": "私たちのストーリー",
+        "text": "<p>コレクションの一つひとつには、職人の技術と情熱の物語が込められています。世界中から最高の素材を厳選し、時を超えて愛される製品を生み出しています。</p>",
+        "button_text": "詳しく見る"
+      }
+    },
+    "faq": {
+      "name": "よくあるご質問",
+      "settings": {
+        "title": { "label": "タイトル" }
+      },
+      "blocks": {
+        "faq_item": {
+          "name": "FAQ項目",
+          "settings": {
+            "question": { "label": "質問" },
+            "answer": { "label": "回答" }
+          }
+        }
+      },
+      "presets": { "name": "よくあるご質問" },
+      "defaults": {
+        "title": "よくあるご質問",
+        "faq_1": {
+          "question": "配送ポリシーについて教えてください。",
+          "answer": "<p>世界各国への配送に対応しています。ご注文は通常1〜2営業日以内に処理されます。</p>"
+        },
+        "faq_2": {
+          "question": "返品ポリシーについて教えてください。",
+          "answer": "<p>ご購入後30日以内の返品を承ります。商品は未使用の状態であることが条件です。</p>"
+        },
+        "faq_3": {
+          "question": "海外配送には対応していますか？",
+          "answer": "<p>はい、世界50カ国以上への配送に対応しています。配送料金とお届け日数は配送先によって異なります。</p>"
+        }
+      }
+    },
+    "product_grid": {
+      "name": "商品グリッド",
+      "settings": {
+        "title": { "label": "タイトル" },
+        "products_per_page": { "label": "ページあたりの商品数" },
+        "columns_desktop": { "label": "デスクトップ列数" },
+        "show_secondary_image": { "label": "セカンダリ画像を表示" }
+      }
+    },
+    "related_products": {
+      "defaults": {
+        "heading": "おすすめ商品"
+      }
     }
   },
   "localization": {

@@ -4,7 +4,7 @@
   <div class="page-width">
     {%- if section.settings.title != blank -%}
       <div class="section-faq__header">
-        <h2 class="section-faq__title">{{ section.settings.title }}</h2>
+        <h2 class="section-faq__title">{{ 'sections.faq.defaults.title' | t | default: section.settings.title }}</h2>
       </div>
     {%- endif -%}
 
@@ -35,7 +35,7 @@
     {
       "type": "text",
       "id": "title",
-      "default": "Frequently Asked Questions",
+      "default": "t:sections.faq.defaults.title",
       "label": "t:sections.faq.settings.title.label"
     }
   ],
@@ -47,13 +47,13 @@
         {
           "type": "text",
           "id": "question",
-          "default": "What is your shipping policy?",
+          "default": "t:sections.faq.defaults.faq_1.question",
           "label": "t:sections.faq.blocks.faq_item.settings.question.label"
         },
         {
           "type": "richtext",
           "id": "answer",
-          "default": "<p>We offer worldwide shipping. Orders are typically processed within 1-2 business days.</p>",
+          "default": "t:sections.faq.defaults.faq_1.answer",
           "label": "t:sections.faq.blocks.faq_item.settings.answer.label"
         }
       ]
