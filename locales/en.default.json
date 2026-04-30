@@ -301,7 +301,7 @@
       "presets": { "name": "Newsletter" },
       "defaults": {
         "heading": "Stay in Touch",
-        "subtext": "Subscribe to receive updates, access to exclusive deals, and more."
+        "subtext": "Subscribe for new arrivals, private sales, and stories from the makers we work with."
       }
     },
     "cart": {
@@ -386,7 +386,7 @@
       },
       "presets": { "name": "Featured Collection" },
       "defaults": {
-        "title": "Featured Collection",
+        "title": "Curated for You",
         "subtitle": "Handpicked pieces for the discerning eye"
       }
     },
@@ -475,7 +475,7 @@
       "presets": { "name": "Brand Story" },
       "defaults": {
         "heading": "Our Story",
-        "text": "Every piece in our collection tells a story of craftsmanship and dedication. We source the finest materials from around the world to create products that stand the test of time.",
+        "text": "LUXE Global brings together craftspeople and small workshops from around the world, presenting their finest work to a global audience. Every piece is sourced directly, shipped worldwide, and accompanied by the story of its making.",
         "button_text": "Learn More"
       }
     },
