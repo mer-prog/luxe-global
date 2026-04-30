@@ -10,15 +10,25 @@
 
     <div class="section-faq__list">
       {%- for block in section.blocks -%}
+        {%- liquid
+          assign question = block.settings.question
+          if question contains 't:'
+            assign question = question | remove_first: 't:' | t
+          endif
+          assign answer = block.settings.answer
+          if answer contains 't:'
+            assign answer = answer | remove_first: 't:' | t
+          endif
+        -%}
         <details class="faq-item" {{ block.shopify_attributes }}>
           <summary>
-            <span>{{ block.settings.question }}</span>
+            <span>{{ question }}</span>
             <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
             </svg>
           </summary>
           <div class="faq-item__answer">
-            {{ block.settings.answer }}
+            <p>{{ answer }}</p>
           </div>
         </details>
       {%- endfor -%}
@@ -51,7 +61,7 @@
           "label": "t:sections.faq.blocks.faq_item.settings.question.label"
         },
         {
-          "type": "richtext",
+          "type": "textarea",
           "id": "answer",
           "default": "t:sections.faq.defaults.faq_1.answer",
           "label": "t:sections.faq.blocks.faq_item.settings.answer.label"

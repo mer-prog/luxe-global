@@ -30,7 +30,7 @@
         {%- endif -%}
 
         {%- if section.settings.text != blank -%}
-          <div class="section-brand-story__text">{{ 'sections.brand_story.defaults.text' | t | default: section.settings.text }}</div>
+          <div class="section-brand-story__text"><p>{{ 'sections.brand_story.defaults.text' | t | default: section.settings.text }}</p></div>
         {%- endif -%}
 
         {%- if section.settings.button_text != blank -%}
@@ -74,7 +74,7 @@
       "label": "t:sections.brand_story.settings.heading.label"
     },
     {
-      "type": "richtext",
+      "type": "textarea",
       "id": "text",
       "default": "t:sections.brand_story.defaults.text",
       "label": "t:sections.brand_story.settings.text.label"
