@@ -349,6 +349,14 @@
       "defaults": {
         "description": "世界中のお客様へ、厳選されたラグジュアリーアイテムをお届けします。全国・海外配送対応。",
         "quick_links": "クイックリンク"
+      },
+      "mer_forge_ecosystem": {
+        "title": "Mer Forge エコシステム",
+        "subtitle": "Productized Solo Service の一部として運用しています。",
+        "lp_label": "ランディングページ（8テーマ）",
+        "demo_label": "EC ストアフロントデモ",
+        "this_label": "このサイト: Shopify Plus テーマ",
+        "github_label": "GitHub で見る"
       }
     },
     "featured_blog": {

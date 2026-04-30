@@ -357,6 +357,14 @@
       "defaults": {
         "description": "Luxury goods curated for the modern connoisseur. Worldwide shipping available.",
         "quick_links": "Quick links"
+      },
+      "mer_forge_ecosystem": {
+        "title": "Mer Forge Ecosystem",
+        "subtitle": "Part of a larger productized solo service offering.",
+        "lp_label": "Landing Page (8 themes)",
+        "demo_label": "EC Storefront Demo",
+        "this_label": "This: Shopify Plus Theme",
+        "github_label": "View on GitHub"
       }
     },
     "featured_blog": {
